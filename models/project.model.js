@@ -4,9 +4,15 @@ const ProjectSchema = mongoose.Schema(
     {
         name: {
             type: String,
-            unique: true
+            unique: true,
+            required: true
         },
-        description: String
+        description: String,
+        userId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        }
     },
     {
         timestamps: true
