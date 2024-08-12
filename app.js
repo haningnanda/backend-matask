@@ -11,7 +11,6 @@ const cors = require('cors');
 const PORT = process.env.PORT || 3001;
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var authRouter = require('./routes/authRoutes');
 var projectRouter = require('./routes/projectRoutes');
 var taskRouter = require('./routes/taskRoutes');
@@ -43,7 +42,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/', authRouter);
 app.use('/', projectRouter);
 app.use('/', taskRouter)
